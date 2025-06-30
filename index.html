@@ -9,6 +9,94 @@
         ;(function(){var w=window;if(w.CoorumResearch){return window.console.error('coorum research script included twice.')}var coo=function(){coo.c(arguments)};coo.q=[];coo.c=function(args){coo.q.push(args)};w.CoorumResearch=coo;function loadFunc(){if(w.CoorumResearchInitialized){return}w.CoorumResearchInitialized=true;var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.research-stg.asobica-sandbox.com/widget.iife.js';s.charset='UTF-8';var x=document.getElementsByTagName('script')[0];if(x.parentNode){x.parentNode.insertBefore(s,x)}}if(document.readyState==='complete'){loadFunc()}else{window.addEventListener('DOMContentLoaded',loadFunc,false);window.addEventListener('load',loadFunc,false)}})();
         CoorumResearch('boot')
     </script>
+    
+    <style>
+        /* ポップアップを画面全体に */
+        #cr-research-launcher div[style*="width: 270px"] {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            border-radius: 0 !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+            overflow: auto !important;
+            z-index: 2147483647 !important;
+        }
+        
+        /* 閉じるボタンの位置を右上に固定 */
+        #cr-research-launcher div[style*="border-radius: 100px"] {
+            position: fixed !important;
+            top: 20px !important;
+            right: 20px !important;
+            bottom: auto !important;
+            left: auto !important;
+            z-index: 2147483648 !important;
+            width: 40px !important;
+            height: 40px !important;
+            background-color: rgba(0, 0, 0, 0.8) !important;
+            border-radius: 50% !important;
+        }
+        
+        /* 閉じるボタンのSVGサイズ調整 */
+        #cr-research-launcher div[style*="border-radius: 100px"] svg {
+            width: 20px !important;
+            height: 20px !important;
+            color: white !important;
+        }
+        
+        /* ヘッダー部分の調整 */
+        #cr-research-launcher div[style*="background-color: rgb(191, 79, 79)"] {
+            border-radius: 12px 12px 0 0 !important;
+            padding: 20px !important;
+        }        
+
+        /* 全体のランチャー調整 */
+        #cr-research-launcher {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 2147483647 !important;
+        }
+        
+        /* height: 100% を持つ要素のheightを無効化 */
+        #cr-research-launcher div[style*="height: 100%"] {
+            height: auto !important;
+        }
+        
+        /* クリック後のランチャーを全画面化 */
+        #cr-research-container.cr-research-container-open[data-display-mode="popup"][style] {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-height: none !important;
+            min-height: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            z-index: 2147483647 !important;
+        }
+        
+        #cr-research-script-iframe {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            border: none !important;
+            z-index: 2147483647 !important;
+        }
+    </style>
 </head>
 <body>
 </body>
